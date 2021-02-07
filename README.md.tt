@@ -1,0 +1,31 @@
+# <%= app_name %>
+
+## Prerequisites
+
+This project requires:
+
+* Ruby <%= RUBY_VERSION %>, preferably managed using [rbenv][]
+* PostgreSQL must be installed and accepting connections
+* [Redis][] must be installed and running on localhost with the default port
+
+## Getting started
+
+### Instalation
+
+Run the `bin/setup` script. This script will:
+
+* Check you have the required Ruby version
+* Install dependencies using Bundler and Yarn
+* Create a `.env.development` file
+* Create, migrate, and seed the database
+
+### Run
+
+Start the app using the following commands:
+   - Rails: `bin/rails s -b 0.0.0.0`
+   - Webpack: `bin/webpack-dev-server`
+   - Sidekiq: `bin/sidekiq`
+
+Access the app at <http://localhost:3000/>.
+
+## Contribution
