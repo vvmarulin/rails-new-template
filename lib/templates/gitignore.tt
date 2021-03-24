@@ -1,0 +1,39 @@
+# Passwords and secrets
+/config/initializers/secret_token.rb
+/config/master.key
+
+# Environment variables
+/.env
+/.env.development
+
+# Environment normalization:
+/.bundle
+/vendor/bundle
+
+# Ignore yarn generated files
+node_modules/
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# Ignore webpack packs manifest
+/public/packs
+/public/packs-test
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore test reports.
+/brakeman-output.*
+/test/reports/
+/capybara-*.html
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+
+# Ignore Byebug command history file.
+.byebug_history
