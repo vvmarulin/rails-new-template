@@ -10,6 +10,8 @@ def apply_rails_new_template
   apply_template 'LICENSE'
   apply_template 'README.md'
   apply_template 'gitignore', '.gitignore'
+
+  apply_template 'ruby-version', '.ruby-version'
   apply_template 'Gemfile'
 
   run_with_clean_bundler_env 'bundle install'
