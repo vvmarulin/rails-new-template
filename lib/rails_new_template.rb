@@ -14,8 +14,13 @@ def apply_rails_new_template
   apply_template 'ruby-version', '.ruby-version'
   apply_template 'Gemfile'
 
+  apply_template 'env.example'
+  apply_template 'env.example', '.env'
+  apply_template 'docker-compose.yml'
+
   run_with_clean_bundler_env 'bundle install'
   run_with_clean_bundler_env 'bin/rails webpacker:install'
+  run_with_clean_bundler_env 'docker-compose up -d'
 
   setup_git
 end
