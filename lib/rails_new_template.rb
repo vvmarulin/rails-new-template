@@ -27,6 +27,8 @@ def apply_rails_new_template
   run_with_clean_bundler_env 'bin/rails db:create'
 
   setup_git
+
+  setup_heroku
 end
 
 # Check if PostgreSQL was used as a default database by rails new command
@@ -69,6 +71,13 @@ def setup_git
   git checkout: '-b master'
   git add: '-A .'
   git commit: "-n -m 'Set up project'"
+end
+
+def setup_heroku
+  return unless system('which heroku')
+
+  system('heroku create')
+  system('git push heroku master ')
 end
 
 def run_with_clean_bundler_env(cmd)
