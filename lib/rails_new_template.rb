@@ -18,7 +18,7 @@ def apply_rails_new_template
   apply_template 'env.example', '.env'
 
   run_with_clean_bundler_env 'bundle install'
-  run_with_clean_bundler_env 'bin/rails webpacker:install'
+  run_with_clean_bundler_env 'bin/rails webpacker:install:typescript'
 
   apply_template 'docker-compose.yml'
   run_with_clean_bundler_env 'docker-compose up -d'
