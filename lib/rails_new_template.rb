@@ -28,6 +28,8 @@ def apply_rails_new_template
 
   run_with_clean_bundler_env 'bin/rails generate rspec:install'
 
+  apply_pages
+
   setup_git
 
   setup_heroku
@@ -80,6 +82,12 @@ def setup_heroku
 
   system('heroku create')
   system('git push heroku master ')
+end
+
+def apply_pages
+  apply_file 'app/controllers/pages_controller.rb'
+  apply_template 'app/views/pages/home.html.slim'
+  apply_file 'config/routes.rb'
 end
 
 def run_with_clean_bundler_env(cmd)
