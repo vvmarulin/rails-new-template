@@ -53,6 +53,7 @@ group :development do
   gem 'listen'<%= gemfile_requirement('listen') %>
   gem 'spring'
 <% if gemfile_requirement("spring-watcher-listen") -%>
+  gem 'spring-commands-rspec'
   gem "spring-watcher-listen"<%= gemfile_requirement("spring-watcher-listen") %>
 <% end -%>
 end
@@ -64,14 +65,16 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'rubocop', require: false
-  gem 'rubocop-minitest', require: false
+  gem 'rubocop-rspec', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :test do
   gem 'capybara'<%= gemfile_requirement('capybara') %>
   gem 'factory_bot_rails'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'shoulda-context'
   gem 'shoulda-matchers'

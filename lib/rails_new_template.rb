@@ -26,6 +26,8 @@ def apply_rails_new_template
   apply_file 'config/database.yml'
   run_with_clean_bundler_env 'bin/rails db:create'
 
+  run_with_clean_bundler_env 'bin/rails generate rspec:install'
+
   setup_git
 
   setup_heroku
