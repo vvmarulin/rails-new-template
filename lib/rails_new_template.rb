@@ -17,6 +17,8 @@ def apply_rails_new_template
   apply_template 'env.example'
   apply_template 'env.example', '.env'
 
+  apply_file 'github/pull_request_template.md', '.github/pull_request_template.md'
+
   run_with_clean_bundler_env 'bundle install'
   run_with_clean_bundler_env 'bin/rails webpacker:install:typescript'
 
